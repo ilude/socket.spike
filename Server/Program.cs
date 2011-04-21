@@ -17,7 +17,7 @@ namespace Server
             socket = new Socket(IPAddress.Any.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             try
             {
-                ConnectionAccepted += new EventHandler<ConnectionAcceptedEventArgs>(ProgramConnectionAccepted);
+                ConnectionAccepted += ProgramConnectionAccepted;
                 socket.Bind(new IPEndPoint(IPAddress.Any, 3677));
                 socket.Listen(5);
 
